@@ -82,6 +82,14 @@
     (t '(you cannot get that.)))
   )
 
+(defun inventory ()
+  (cons 'items- (objects-at 'body *objects* *object-locations*))
+  )
+
 (print (look))
 (print (pickup 'whiskey))
 (print (look))
+(print (inventory))
+(print (pickup 'bucket))
+(print (look))
+(print (inventory))
