@@ -76,5 +76,12 @@
     )
   )
 
+(defun pickup (object)
+  (cond ((member object (objects-at *location* *objects* *object-locations*))
+    (push (list object 'body) *object-locations*) `(you are now carrying the ,object))
+    (t '(you cannot get that.)))
+  )
+
 (print (look))
-(print (walk 'upstairs))
+(print (pickup 'whiskey))
+(print (look))
